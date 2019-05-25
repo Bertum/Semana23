@@ -5,27 +5,27 @@
 #include <QDebug>
 #include <Qt3DExtras>
 
-void createLawMan(Qt3DCore::QEntity *rootEntity){
+void createPark(Qt3DCore::QEntity *rootEntity){
     // Material
     Qt3DRender::QMaterial *material = new Qt3DExtras::QPhongMaterial(rootEntity);
 
-    // LawMan entity
-    Qt3DCore::QEntity *lawManEntity = new Qt3DCore::QEntity(rootEntity);
+    // scene entity
+    Qt3DCore::QEntity *park = new Qt3DCore::QEntity(rootEntity);
 
-    // Import model
+    // Import/* model
     Qt3DRender::QMesh *mesh = new Qt3DRender::QMesh();
-    mesh->setSource(QUrl(QStringLiteral("qrc:/objs/lawMan.obj")));
-
-    lawManEntity->addComponent(mesh);
-    lawManEntity->addComponent(material);
+    mesh->setSource(QUrl(QStringLiteral("qrc:/parque.obj")));
+    park->addComponent(mesh);
+    park->addComponent(material);
 }
 
 Qt3DCore::QEntity *createScene()
 {
     // Root entity
     Qt3DCore::QEntity *rootEntity = new Qt3DCore::QEntity;
-    // Create the law man
-    createLawMan(rootEntity);
+
+    // Create the scene
+    createPark(rootEntity);
 
     return rootEntity;
 }

@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>parque.obj</file>
+        <file>parque.mtl</file>
+        <file>parque.qml</file>
+    </qresource>
+</RCC>

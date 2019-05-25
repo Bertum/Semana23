@@ -30,8 +30,7 @@ CONFIG += c++11
 SOURCES += \
         main.cpp
 
-HEADERS += \
-        mainwindow.h
+HEADERS +=
 
 FORMS +=
 
@@ -41,17 +40,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    parque.mtl \
-    parque.obj \
-    scene/parque.mtl \
-    scene/textures/CNCR05L.JPG \
-    scene/textures/CNCR05LB.JPG \
-    scene/textures/germany001.jpg \
-    scene/textures/germany001b.jpg \
-    scene/textures/grass014.jpg \
-    scene/textures/grassbump.jpg \
-    scene/textures/hungary021.jpg \
-    scene/textures/hungary021b.jpg
 
 RESOURCES += \
-    qml.qrc
+    parque.qrc \
