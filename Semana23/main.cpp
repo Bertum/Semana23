@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     camera->setViewCenter(QVector3D(0, 0, 0));
 
     // For camera controls
-    Qt3DExtras::QOrbitCameraController *camController = new Qt3DExtras::QOrbitCameraController(scene);
+    Qt3DExtras::QFirstPersonCameraController  *camController = new Qt3DExtras::QFirstPersonCameraController (scene);
     camController->setLinearSpeed( 50.0f );
     camController->setLookSpeed( 180.0f );
     camController->setCamera(camera);
