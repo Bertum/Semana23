@@ -28,7 +28,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        main.cpp
+    main.cpp
 
 HEADERS +=
 
@@ -42,4 +42,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES += \
 
 RESOURCES += \
-    parque.qrc \
+    park.qrc
+

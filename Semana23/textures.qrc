@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>textures/CNCR05L.JPG</file>
+    </qresource>
+</RCC>

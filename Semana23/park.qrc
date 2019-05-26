@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>parque.mtl</file>
+        <file>parque.obj</file>
+        <file>textures/CNCR05L.JPG</file>
+        <file>textures/CNCR05LB.JPG</file>
+        <file>textures/germany001.jpg</file>
+        <file>textures/germany001b.jpg</file>
+        <file>textures/grass014.jpg</file>
+        <file>textures/grassbump.jpg</file>
+        <file>textures/hungary021.jpg</file>
+        <file>textures/hungary021b.jpg</file>
+    </qresource>
+</RCC>

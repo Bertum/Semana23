@@ -4,28 +4,20 @@
 #include <Qt3DCore>
 #include <QDebug>
 #include <Qt3DExtras>
-
-void createPark(Qt3DCore::QEntity *rootEntity){
-    // Material
-    Qt3DRender::QMaterial *material = new Qt3DExtras::QPhongMaterial(rootEntity);
-
-    // scene entity
-    Qt3DCore::QEntity *park = new Qt3DCore::QEntity(rootEntity);
-
-    // Import/* model
-    Qt3DRender::QMesh *mesh = new Qt3DRender::QMesh();
-    mesh->setSource(QUrl(QStringLiteral("qrc:/parque.obj")));
-    park->addComponent(mesh);
-    park->addComponent(material);
-}
+#include <QSceneLoader>
 
 Qt3DCore::QEntity *createScene()
 {
     // Root entity
     Qt3DCore::QEntity *rootEntity = new Qt3DCore::QEntity;
+    // Create scene
+    Qt3DRender::QSceneLoader *sceneLoader = new Qt3DRender::QSceneLoader(rootEntity);
+    sceneLoader->setSource(QUrl(QStringLiteral("qrc:/parque.obj")));
 
-    // Create the scene
-    createPark(rootEntity);
+    //Qt3DRender::QSpotLight *light = new Qt3DRender::QSpotLight(rootEntity);
+    //light->setIntensity(0.1f);
+
+    rootEntity->addComponent(sceneLoader);
 
     return rootEntity;
 }
@@ -40,14 +32,14 @@ int main(int argc, char *argv[])
 
     // Camera
     Qt3DRender::QCamera *camera = view.camera();
-    camera->lens()->setPerspectiveProjection(45.0f, 16.0f/9.0f, 0.1f, 1000.0f);
+    camera->lens()->setPerspectiveProjection(45.0f, 16.0f / 9.0f, 0.1f, 1000.0f);
     camera->setPosition(QVector3D(0, 0, 40.0f));
     camera->setViewCenter(QVector3D(0, 0, 0));
 
     // For camera controls
-    Qt3DExtras::QFirstPersonCameraController  *camController = new Qt3DExtras::QFirstPersonCameraController (scene);
-    camController->setLinearSpeed( 50.0f );
-    camController->setLookSpeed( 180.0f );
+    Qt3DExtras::QFirstPersonCameraController *camController = new Qt3DExtras::QFirstPersonCameraController(scene);
+    camController->setLinearSpeed(50.0f);
+    camController->setLookSpeed(180.0f);
     camController->setCamera(camera);
 
     //Set scene to view
